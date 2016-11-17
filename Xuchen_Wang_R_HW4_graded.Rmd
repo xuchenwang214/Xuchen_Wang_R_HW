@@ -1,0 +1,146 @@
+---
+title: "Xuchen_Wang_R_HW4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 1
+### (a)
+```{r}
+1:20
+```
+### (b)
+```{r}
+20:1
+```
+### (c)
+```{r}
+c(1:20,19:1)
+```
+### (d)
+```{r}
+tmp <- c(4,6,3)
+```
+### (e)
+```{r}
+rep(tmp,10) # repeat tmp=c(4,6,3) ten times
+```
+### (f)
+```{r}
+rep(tmp,len = 31) # repeat c(4,6,3) until the length get to 31
+```
+### (g)
+```{r}
+rep(tmp,c(10,20,30)) # repeat each of c(4,6,3) for 10,20,30 times respectively
+```
+
+## Exercise 2
+```{r}
+x <- seq(3,6,by = 0.1) # create a vector x start with 3 and end with 6, the interval is 0.1.
+exp(x)*cos(x) # the operation of vector is the operation of each corresponding element in the vector
+```
+
+## Exercise 3
+### (a)
+```{r}
+x <- seq(3,36,by = 3) # create a vector for the first power sequence
+y <- seq(1,34,by = 3) # create a vector for the second power sequence
+0.1^(x)*0.2^(y) # use the expression to calculate values
+```
+### (b)
+```{r}
+x <- (1:25) # create a vector for the power sequence
+2^(x)/x # use the expression to calculate values
+```
+
+## Exercise 4
+### (a)
+```{r}
+i <- (10:100) # create a vector for i
+sum(i^3+4*i^2) # first use expression to calculate each element in the vector, then use sum function to calculate the sum of all elements in the vector.
+```
+### (b)
+```{r}
+i <- (1:25) # create a vector for i
+sum(2^i/i+3^i/i^2)  # first use expression to calculate each element in the vector, then use sum function to calculate the sum of all elements in the vector.
+```
+
+## Exercise 5
+### (a)
+```{r}
+paste(rep('label',30),1:30) # use paste function to paste 30 'label' with vector 1 to 30 respectively (there is a space by default)
+```
+### (b)
+```{r}
+paste(rep('fn',30),1:30,sep = '') # use paste function to paste 30 'fn' with vector 1 to 30 respectively and use sep='' to remove the space
+```
+
+## Exercise 6
+```{r}
+xVec <- sample(0:999, 250, replace=T)
+yVec <- sample(0:999, 250, replace=T)
+```
+### (a)
+```{r}
+yVec[-1]-xVec[-length(xVec)] # remove the first element in yVec and remove the last element in xVec, then do minus on each corresponding element in the vector
+```
+### (b)
+```{r}
+sin(yVec[-length(yVec)])/cos(xVec[-1]) # remove the first element in xVec and remove the last element in yVec, then do operations on each corresponding element in the vector
+```
+### (c)
+```{r}
+xVec[c(-(length(xVec)-1),-length(xVec))]+2*xVec[c(-1,-length(xVec))]-xVec[c(-1,-2)]
+# Let the fisrt vector be the first element to the last third element in xVec, the second vector be the seconde to the last second element in xVec, the third vector be the third to the last element in xVec, then do operations on each corresponding element in the vectors.
+```
+### (d)
+```{r}
+sum(exp(-xVec[-1])/(xVec[-length(xVec)]+10)) # Let the first vector remove the first element from xVec, which stands for x(i+1). Let the second vecotr remove the last element from xVec, which stands for x(i). Then use expression to calculate each element in the vector. Use sum function to calculate the sum.
+```
+
+## Exercise 7
+### (a)
+```{r}
+yVec[yVec>600] # If yVec>600, it is true. Show the element of 'true'.
+```
+### (b)
+```{r}
+which(yVec>600) # which function will show the index of the 'true' element.
+```
+### (c)
+```{r}
+xVec[yVec>600] # If yVec>600, it is true. Show the element of 'true' in x.
+```
+### (d)
+```{r}
+sqrt(abs(xVec-mean(xVec))) # use mean to calulate the mean of a vector. use abs to calculate the absolute value of each element in a vector. use sqrt to calculate the square root of each element in a vector.
+```
+### (e)
+```{r}
+sum(yVec>max(yVec)-200) # calculate the sum of all numbers if it is greater than the maximum minus 200
+```
+### (f)
+```{r}
+sum(xVec%%2==0) # calculate the sum if xVec is a even number
+```
+### (g)
+```{r}
+xVec[order(yVec)] # use order function to sort vector yVec with increasing values, then show xVec in that sequence
+```
+### (h)
+```{r}
+yVec[seq(1,length(yVec),by=3)] # use seq to create a vector start with 1, with interval of 3 till the length of yVec, show the corresponding element in yVec
+```
+
+## Exercise 8
+```{r}
+sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2)))+1 # create a vector of the division of two arithmetic progression. Then use cumprod to create a vector of cumulative product of the vector. Use sum to calculate the sum and then add 1.
+```
+
+
+
+
+
